@@ -7,7 +7,8 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <style>
+   <!-- Will look weird when comments are added, styling might need to be change
+<style>
         
 #QA {
   display: inline-block;
@@ -33,7 +34,7 @@ body {
         margin-right: -50%;
         transform: translate(-50%, -50%); color:#87CEEB;}
 }
-    </style>
+    </style> -->
     <title>Q&A</title>
   </head>
 
