@@ -1,3 +1,6 @@
+<?php
+  include_once 'includes/index.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -41,18 +44,34 @@ body {
       <div id = "QA"><h2>Q&A</h2></div>
       </div>
 
-      <div id="main" style = "text-align:center" >
-        Email:<br>
-        <input type="text" name="mail" id="mail"><br>
-        Name:<br>
-        <input type="text" name="name" id="name"><br>
-        Subject:<br>
-        <input type="text" name="subject" id="subject"><br>
-        Comment:<br>
-        <input type="text" name="comment" id="comment"><br><br>
-        <button type="submit" id="submit" onclick="store()">Post</button>
-      </div>
-      <p id="com"></p>
+      <div id="main">
+        <form action = "includes/insert.php" method = "POST">
+          Email:<br>
+          <input type="text" name="mail" id="mail"><br>
+          Name:<br>
+          <input type="text" name="name" id = "name"><br>
+          Subject:<br>
+          <input type="text" name="subject" id = "subject"><br>
+          Comment:<br>
+          <textarea name="comment" rows="8" cols="80" id = "comment"></textarea>" <br><br>
+         <button type="submit" id="submit"  name = "submit" >Post</button>
+       </form>
+    </div>
+    <p id = "com"></p>
+  <header>
+    <p>
+      <?php
+          $sql = "SELECT * FROM hack;";
+          $result = mysqli_query($conn, $sql);
+          $resultCheck = mysqli_num_rows($result);
+          if($resultCheck > 0){
+            while($row = mysqli_fetch_assoc($result)){
+              echo "<p>" . $row['mail'] . "<br>" . $row['name'] . "<br>" . $row['subject'] . "<br>" . $row['comment'] . "</p>";
+            }
+          }
+      ?>
+    </p>
+
       <header>
   </body>
 
